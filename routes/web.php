@@ -69,9 +69,12 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 // ================ MANAGER ================
 Route::middleware(['auth', 'role:manager'])->prefix('manager')->name('manager.')->group(function () {
     Route::get('/', [App\Http\Controllers\Manager\DashboardController::class, 'index'])->name('dashboard');
-    Route::get('repairs', [App\Http\Controllers\Manager\IssueController::class, 'index'])->name('repairs.index');
-    Route::get('materials', [App\Http\Controllers\Manager\EquipmentController::class, 'index'])->name('materials.index');
-    Route::get('issue-computers', [App\Http\Controllers\Manager\IssueComputerController::class, 'index'])->name('issuecomputers.index');
+    Route::get('/issues', [App\Http\Controllers\Manager\IssueController::class, 'index'])->name('issues.index');
+    Route::get('/issues/{id}/edit', [App\Http\Controllers\Manager\IssueController::class, 'edit'])->name('issues.edit');
+    Route::put('/issues/{id}', [App\Http\Controllers\Manager\IssueController::class, 'update'])->name('issues.update');
+    Route::get('/issues/search', [App\Http\Controllers\Manager\IssueController::class, 'search'])->name('issues.search');
+
+    Route::get('/equipments', [App\Http\Controllers\Manager\EquipmentController::class, 'index'])->name('equipments.index');
 });
 
 // ================ TEACHER ================
