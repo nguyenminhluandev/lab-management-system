@@ -41,9 +41,14 @@ class User extends Authenticatable
         return $this->hasMany(Schedule::class, 'teacher_id', 'id');
     }
 
-    public function issues()
+    public function reportedIssues()
     {
-        return $this->hasMany(Issue::class, 'reported_by', 'id');
+        return $this->hasMany(Issue::class, 'reported_by');
+    }
+
+    public function fixedIssues()
+    {
+        return $this->hasMany(Issue::class, 'fixed_by');
     }
 
     public function leaveRequests()
@@ -55,4 +60,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Lab::class, 'manager_id', 'id');
     }
+
+
 }

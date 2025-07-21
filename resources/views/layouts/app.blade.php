@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('title', 'Quản lý phòng máy')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="{{ asset(' js/app.js') }}"></script>
     <style>
         body { background-color: #f8f9fa; }
         .navbar-brand { font-weight: bold; }
@@ -61,5 +62,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+@yield('scripts')
 </body>
 </html>

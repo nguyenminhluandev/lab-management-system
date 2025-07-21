@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('teacher_id');
             $table->integer('semester_id');
 
-            $table->integer('day_of_week'); //2-CN
+            $table->integer('day_of_week'); //2-7
             $table->integer('start_period'); //1-15
             $table->integer('total_periods'); //1-5
 

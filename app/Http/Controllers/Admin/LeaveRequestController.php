@@ -17,6 +17,13 @@ class LeaveRequestController extends Controller
         return view('admin.leave_requests.index', compact('requests'));
     }
 
+    // Chi tiết yêu cầu
+    public function show($id)
+    {
+        $request = LeaveRequest::with(['schedule', 'teacher', 'approver'])->findOrFail($id);
+        return view('admin.leave_requests.show', compact('request'));
+    }
+
     // Duyệt hoặc từ chối
     public function approve(Request $request, $id)
     {
@@ -36,10 +43,4 @@ class LeaveRequestController extends Controller
         return redirect()->route('admin.leave_requests.index');
     }
 
-    // Chi tiết yêu cầu
-    public function show($id)
-    {
-        $request = LeaveRequest::with(['schedule', 'teacher', 'approver'])->findOrFail($id);
-        return view('admin.leave_requests.show', compact('request'));
-    }
 }

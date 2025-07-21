@@ -1,41 +1,46 @@
 @extends('layouts.app')
 
+@section('title', 'Báo cáo sự cố')
+
 @section('content')
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-12">
-                    <h1>
-                    Create Issues
-                    </h1>
-                </div>
-            </div>
+<div class="container">
+
+    <h3>🛠️ Báo cáo sự cố máy tính</h3>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Lỗi!</strong> Vui lòng nhập đầy đủ thông tin:<br>
+            <ul>
+                @foreach ($errors->all() as $error) <li>{{ $error }}</li> @endforeach
+            </ul>
         </div>
-    </section>
+    @endif
 
-    <div class="content px-3">
+    <form method="POST" action="{{ route('teacher.issues.store') }}">
+        @csrf
 
-        @include('adminlte-templates::common.errors')
-
-        <div class="card">
-
-            {!! Form::open(['route' => 'issues.store']) !!}
-
-            <div class="card-body">
-
-                <div class="row">
-                    @include('issues.fields')
-                </div>
-
-            </div>
-
-            <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('issues.index') }}" class="btn btn-default"> Cancel </a>
-            </div>
-
-            {!! Form::close() !!}
-
+        <div class="form-group">
+            <label for="reported_date">⏰ Thời gian phát hiện</label>
+            <input type="datetime-local" name="reported_date" class="form-control" required>
         </div>
-    </div>
+
+        <div class="form-group">
+            <label for="computer_ids">🖥️ Máy tính bị lỗi</label>
+            <select name="computer_ids[]" class="form-control" multiple required>
+                @foreach ($computers as $computer)
+                    <option value="{{ $computer->id }}">{{ $computer->id }} - {{ $computer->name }} ({{ $computer->lab_id }})</option>
+                @endforeach
+            </select>
+            <small>Giữ Ctrl (hoặc Cmd) để chọn nhiều máy</small>
+        </div>
+
+        <div class="form-group">
+            <label for="description">📄 Mô tả chi tiết</label>
+            <textarea name="description" class="form-control" rows="4" required placeholder="Ví dụ: Máy không lên nguồn, lỗi màn hình đen..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">📤 Gửi báo cáo</button>
+        <a href="{{ route('teacher.issues.index') }}" class="btn btn-secondary">Quay lại</a>
+    </form>
+</div>
 @endsection

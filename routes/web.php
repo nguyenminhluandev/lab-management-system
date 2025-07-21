@@ -78,7 +78,10 @@ Route::middleware(['auth', 'role:manager'])->prefix('manager')->name('manager.')
 Route::middleware(['auth', 'role:teacher'])->prefix('teacher')->name('teacher.')->group(function () {
     Route::get('/', [App\Http\Controllers\Teacher\DashboardController::class, 'index'])->name('dashboard');
     Route::get('schedules', [App\Http\Controllers\Teacher\ScheduleController::class, 'index'])->name('schedules.index');
-    Route::resource('issues', App\Http\Controllers\Teacher\IssueController::class)->only(['index', 'create', 'store']);
-    Route::get('issue-computers', [App\Http\Controllers\Teacher\IssueComputerController::class, 'index'])->name('issuecomputers.index');
+
+    Route::resource('issues', App\Http\Controllers\Teacher\IssueController::class);
+    Route::get('issues/create', [App\Http\Controllers\Teacher\IssueController::class, 'create'])->name('issues.create');
+    Route::post('issues', [App\Http\Controllers\Teacher\IssueController::class, 'store'])->name('issues.store');
+
     Route::resource('leaverequests', App\Http\Controllers\Teacher\LeaveRequestController::class)->only(['index', 'create', 'store']);
 });

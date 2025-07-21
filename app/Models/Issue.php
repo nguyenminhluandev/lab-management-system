@@ -37,5 +37,19 @@ class Issue extends Model
         'status' => 'required'
     ];
 
-    
+    public function computers()
+    {
+        return $this->belongsToMany(Computer::class, 'issue_computers', 'issue_id', 'computer_id');
+    }
+
+    public function reporter()
+    {
+        return $this->belongsTo(User::class, 'reported_by');
+    }
+
+    public function fixer()
+    {
+        return $this->belongsTo(User::class, 'fixed_by');
+    }
+
 }

@@ -31,4 +31,9 @@ class Computer extends Model
     {
         return $this->belongsTo(Lab::class, 'lab_id');
     }
+
+    public function issues()
+    {
+        return $this->belongsToMany(Issue::class, 'issue_computers', 'computer_id', 'issue_id');
+    }
 }
