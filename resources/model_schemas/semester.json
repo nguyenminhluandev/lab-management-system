@@ -1,0 +1,9 @@
+[
+    { "name": "id", "dbType": "integer", "primary": true },
+    { "name": "name", "dbType": "string", "validations": "required" },
+    { "name": "start_date", "dbType": "date", "validations": "required" },
+    { "name": "end_date", "dbType": "date", "validations": "required" },
+    { "name": "academic_year", "dbType": "string", "validations": "required" },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

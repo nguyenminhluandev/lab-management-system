@@ -1,0 +1,9 @@
+[
+    { "name": "id", "dbType": "integer", "primary": true },
+    { "name": "lab_id", "dbType": "string", "validations": "required" },
+    { "name": "ghost_id", "dbType": "string", "validations": "required" },
+    { "name": "assigned_at", "dbType": "datetime", "validations": "required" },
+    { "name": "is_active", "dbType": "boolean", "validations": "" },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

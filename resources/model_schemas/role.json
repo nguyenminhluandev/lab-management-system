@@ -1,0 +1,10 @@
+[
+    { "name": "id", "dbType": "integer", "primary": true },
+    {
+        "name": "name",
+        "dbType": "string",
+        "validations": "required|unique:roles"
+    },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

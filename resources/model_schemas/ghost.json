@@ -1,0 +1,9 @@
+[
+    { "name": "id", "dbType": "string", "primary": true },
+    { "name": "name", "dbType": "string", "validations": "required" },
+    { "name": "version", "dbType": "string", "validations": "" },
+    { "name": "file_path", "dbType": "text", "validations": "required" },
+    { "name": "description", "dbType": "text", "validations": "" },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

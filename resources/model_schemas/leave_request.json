@@ -1,0 +1,18 @@
+[
+    { "name": "id", "dbType": "integer", "primary": true },
+    { "name": "schedule_id", "dbType": "integer", "validations": "required" },
+    { "name": "teacher_id", "dbType": "string", "validations": "required" },
+    { "name": "leave_date", "dbType": "datetime", "validations": "required" },
+    { "name": "makeup_date", "dbType": "datetime", "validations": "required" },
+    { "name": "reason", "dbType": "text", "validations": "required" },
+    {
+        "name": "status",
+        "dbType": "enum:['Chờ duyệt','Đã duyệt','Từ chối']",
+        "validations": "required"
+    },
+    { "name": "reason_rejection", "dbType": "text", "validations": "" },
+    { "name": "approved_by", "dbType": "string", "validations": "" },
+    { "name": "approved_at", "dbType": "datetime", "validations": "" },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

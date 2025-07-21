@@ -1,0 +1,6 @@
+[
+    { "name": "issue_id", "dbType": "integer", "primary": true },
+    { "name": "computer_id", "dbType": "string", "primary": true },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

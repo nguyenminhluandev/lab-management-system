@@ -1,0 +1,13 @@
+[
+    { "name": "id", "dbType": "string", "primary": true },
+    { "name": "name", "dbType": "string", "validations": "required" },
+    {
+        "name": "email",
+        "dbType": "string",
+        "validations": "required|email|unique:users"
+    },
+    { "name": "password", "dbType": "string", "validations": "required" },
+    { "name": "role_id", "dbType": "integer", "validations": "required" },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

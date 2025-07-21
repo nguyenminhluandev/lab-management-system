@@ -1,0 +1,14 @@
+[
+    { "name": "id", "dbType": "integer", "primary": true },
+    { "name": "lab_id", "dbType": "string", "validations": "required" },
+    { "name": "subject_id", "dbType": "string", "validations": "required" },
+    { "name": "teacher_id", "dbType": "string", "validations": "required" },
+    { "name": "semester_id", "dbType": "integer", "validations": "required" },
+    { "name": "date", "dbType": "datetime", "validations": "required" },
+    { "name": "start_period", "dbType": "integer", "validations": "required" },
+    { "name": "end_period", "dbType": "integer", "validations": "required" },
+    { "name": "start_time", "dbType": "time", "validations": "required" },
+    { "name": "end_time", "dbType": "time", "validations": "required" },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

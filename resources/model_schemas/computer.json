@@ -1,0 +1,7 @@
+[
+    { "name": "id", "dbType": "string", "primary": true },
+    { "name": "lab_id", "dbType": "string", "validations": "required" },
+    { "name": "config", "dbType": "text", "validations": "required" },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

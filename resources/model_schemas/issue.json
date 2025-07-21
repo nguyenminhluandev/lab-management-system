@@ -1,0 +1,19 @@
+[
+    { "name": "id", "dbType": "integer", "primary": true },
+    { "name": "description", "dbType": "text", "validations": "required" },
+    { "name": "reported_by", "dbType": "string", "validations": "required" },
+    {
+        "name": "reported_date",
+        "dbType": "datetime",
+        "validations": "required"
+    },
+    {
+        "name": "status",
+        "dbType": "enum:['Chưa xử lý','Đã xử lý']",
+        "validations": "required"
+    },
+    { "name": "fixed_date", "dbType": "datetime", "validations": "" },
+    { "name": "fixed_by", "dbType": "string", "validations": "" },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]

@@ -1,0 +1,18 @@
+[
+    { "name": "id", "dbType": "integer", "primary": true },
+    { "name": "lab_id", "dbType": "string", "validations": "required" },
+    { "name": "name", "dbType": "string", "validations": "required" },
+    {
+        "name": "quantity",
+        "dbType": "integer",
+        "validations": "required|min:1"
+    },
+    {
+        "name": "status",
+        "dbType": "enum:['Hoạt động','Hỏng']",
+        "validations": "required"
+    },
+    { "name": "description", "dbType": "text", "validations": "" },
+    { "name": "created_at", "dbType": "timestamp", "nullable": true },
+    { "name": "updated_at", "dbType": "timestamp", "nullable": true }
+]
