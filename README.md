@@ -112,20 +112,6 @@ Open:
 http://127.0.0.1:8000
 ```
 
-## Screenshots
-
-### Dashboard
-
-
-
-### User Management
-
-
-
-### Computer Lab Management
-
-
-
 ## Learning Outcomes
 
 Through this project, I gained practical experience in:
