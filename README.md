@@ -116,15 +116,15 @@ http://127.0.0.1:8000
 
 ### Dashboard
 
-Add dashboard screenshots here.
+
 
 ### User Management
 
-Add user management screenshots here.
+
 
 ### Computer Lab Management
 
-Add computer lab management screenshots here.
+
 
 ## Learning Outcomes
 
